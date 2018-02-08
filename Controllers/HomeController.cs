@@ -8,11 +8,11 @@ namespace Tamagotchi.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet("/Home")]
+        [HttpGet("/")]
         public IActionResult Home()
         {
             List<Tama> tamaList = Tama.GetAll();
-            return View("Home");
+            return View("Home", tamaList);
         }
         [HttpGet("/Food/{id}")]
         public IActionResult Food(int id)

@@ -18,8 +18,8 @@ namespace Tamagotchi.Models
             _hunger = hunger;
             _fun = fun;
             _rest = rest;
+            _id = _tamas.Count + 1;
             _tamas.Add(this);
-            _id = _tamas.Count;
         }
         public void SetName(string name)
         {
