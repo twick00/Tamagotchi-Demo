@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body> 
+    <!-- This is the landing page of the website -->
+    <h1>To Do List</h1>
+<ul>
+  @if (Model != null)
+  {
+    @foreach (var tama in Model)
+    {
+        <li><a href='/Status/@tama.GetId()'>@tama.GetId()</a>Test</li>
+    }
+  }
+</ul>
+<a href='/Create'>Create a Tamagotchi!</a>
+  </form>
+</body>
+</html>

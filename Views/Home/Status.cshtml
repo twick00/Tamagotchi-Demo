@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body> 
+    <!-- This is where stats will be shown -->
+    @if (@Model.GetHunger() > 40)
+    {
+        <p>@Model.GetName() is hungry and needs to be fed</p>
+    }
+    @if (@Model.GetFun() < 100)
+    {
+        <p>@Model.GetName() needs some playtime!</p>
+    }
+    @if (@Model.GetRest() < 40) 
+    {
+        <p>@Model.GetName() needs some sleep!</p>
+    }
+    <form action='/food' method="post">
+      <input name="tamaId" id="tamaId" type="hidden" value="@Model.GetId()">
+      <button type='submit' class='btn'>Feed @Model.GetName().</button>
+    </form>
+    <form action='/play' method="post">
+      <button type='submit' class='btn'>Play with @Model.GetName().</button>
+    </form>
+    <form action='/sleep' method="post">
+      <button type='submit' class='btn'>Put @Model.GetName() to bed.</button>
+    </form>
+</body>
+</html>
